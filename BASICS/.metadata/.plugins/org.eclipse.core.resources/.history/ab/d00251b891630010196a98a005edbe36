@@ -1,0 +1,15 @@
+package in.yoy.webprojectdemo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/")
+	@ResponseBody // Use this if you want the return value of the handler method to not be considered as a view name but rather as a 
+	public String greetUser() {
+		return "Namaskar" ;
+	}
+}

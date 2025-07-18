@@ -1,0 +1,18 @@
+package in.yoy.webprojectdemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class WebProjectDemoApplication {
+
+	public static void main(String[] args) {
+		System.out.println("Application Started");
+		SpringApplication.run(WebProjectDemoApplication.class, args);
+		System.out.println("Application Finished");
+	}
+
+}
+
+// Note all the other packages should be present as a sub-package of the package where main class is present
+// If you have created packages as above mentioned then you have to use @ComponentScan in main class

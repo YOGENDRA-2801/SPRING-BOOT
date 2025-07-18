@@ -1,0 +1,20 @@
+package in.yoy.annobasedconfig;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import in.yoy.annobasedconfig.beans.Students;
+
+@SpringBootApplication
+public class AnnoBasedConfigApplication {
+	
+	private Students stud ;
+
+	public static void main(String[] args) 
+	{		
+		SpringApplication.run(AnnoBasedConfigApplication.class, args);
+		
+		
+	}
+
+}

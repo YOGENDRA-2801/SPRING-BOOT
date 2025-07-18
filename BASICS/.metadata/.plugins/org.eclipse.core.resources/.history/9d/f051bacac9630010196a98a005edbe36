@@ -1,0 +1,50 @@
+package in.yoy.javabasedconfig.beans;
+
+public class Student {
+	
+	private String name ;
+	private int age ;
+	private String religion ;
+	
+	public Student(String name, int age, String religion) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.religion = religion;
+	}
+	
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getReligion() {
+		return religion;
+	}
+
+
+
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
+
+
+
+	public void display() {
+		System.out.println("Name : " + name);
+		System.out.println("Age : " + age);
+		System.out.println("Religion : " + religion);
+	}
+	
+}

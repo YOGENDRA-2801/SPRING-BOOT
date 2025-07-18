@@ -1,0 +1,39 @@
+package in.yoy.javabasedconfig.config;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import in.yoy.javabasedconfig.beans.Student;
+
+@Configuration
+public class SpringConfigFile {
+	
+	@Bean
+	CommandLineRunner clr() {
+//		CommandLineRunner ek interface hota hai jo spring boot application start hote hi jo bhi code humne provide kiya h usko execute krwa dena
+		CommandLineRunner cmdLineRun = new CommandLineRunner() {
+			@Override
+			public void run(String... args) throws Exception {
+				vidyarthi1().display();
+				System.out.println("----------");
+				vidyarthi2().display();
+			}
+		};
+		return cmdLineRun ;
+	}
+	
+	@Bean
+	Student vidyarthi1() {
+		return new Student("Yogendra", 22, "Hindu") ;
+	}
+	
+	@Bean
+	Student vidyarthi2() {
+		return new Student("MAZ", 52, "Aatankwadi") ;
+	}
+	
+//	Spring Boot automatically @Bean methods ko detect kar leta hai, chahe wo public ho ya package-private 
+//	@Bean public Student stud() { --- } ==> public modifier redundant hai iss case mein
+	
+}

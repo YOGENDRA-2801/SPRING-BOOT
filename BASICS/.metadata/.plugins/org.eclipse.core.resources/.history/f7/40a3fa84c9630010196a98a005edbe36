@@ -1,0 +1,16 @@
+package in.yoy.javabasedconfig.beans;
+
+public class Student {
+	private String name ;
+	private int age ;
+	private String religion ;
+	
+	public Student(String name, int age, String religion) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.religion = religion;
+	}
+	
+	
+}

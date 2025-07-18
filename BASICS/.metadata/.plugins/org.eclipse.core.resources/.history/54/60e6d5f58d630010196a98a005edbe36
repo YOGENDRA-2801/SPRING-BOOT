@@ -1,0 +1,16 @@
+package in.yoy.standaloneprojectdemo.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication // it is an entry point of our application which combination of 3 annotation @Component , @ComponentScan and @EnableAutoConfiguration that provides provides setup and configurations for our spring boot application
+public class StandaloneProjectDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StandaloneProjectDemoApplication.class, args);
+//		jitne bhi task required hai hamari application ko execute hone k liye wah saare task ko yah perform krga
+//		Task examples :- 
+		System.out.println("Namaste Duniya");
+	}
+
+}

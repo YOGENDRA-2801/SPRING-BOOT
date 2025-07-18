@@ -1,0 +1,5 @@
+package in.yoy.javabasedconfig.beans;
+
+public class Student {
+	private String name ;
+}

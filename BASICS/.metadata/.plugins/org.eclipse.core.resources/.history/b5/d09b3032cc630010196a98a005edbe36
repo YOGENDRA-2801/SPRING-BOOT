@@ -1,0 +1,27 @@
+package in.yoy.javabasedconfig.config;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import in.yoy.javabasedconfig.beans.Student;
+
+@Configuration
+public class SpringConfigFile {
+	
+	public CommandLineRunner
+	
+	@Bean("shishye2")
+	Student vidyarthi1() {
+		return new Student("Yogendra", 22, "Hindu") ;
+	}
+	
+	@Bean("shishye2")
+	Student vidyarthi2() {
+		return new Student("SRK", 52, "Aatankwadi") ;
+	}
+	
+//	Spring Boot automatically @Bean methods ko detect kar leta hai, chahe wo public ho ya package-private 
+//	@Bean public Student stud() { --- } ==> public modifier redundant hai iss case mein
+	
+}

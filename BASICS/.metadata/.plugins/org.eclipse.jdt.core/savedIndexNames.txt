@@ -1,0 +1,20 @@
+INDEX VERSION 1.134+C:\Users\Jitendra\Desktop\YOY\Spring Boot\BASICS\.metadata\.plugins\org.eclipse.jdt.core
+3451336970.index
+670900265.index
+1238095767.index
+3849089762.index
+1865797976.index
+1024899207.index
+1782171203.index
+2408521632.index
+2308593609.index
+2160056590.index
+1429450160.index
+2856071258.index
+206699077.index
+2294783333.index
+2298222607.index
+3499269754.index
+1025943068.index
+1662466817.index
+1548384792.index

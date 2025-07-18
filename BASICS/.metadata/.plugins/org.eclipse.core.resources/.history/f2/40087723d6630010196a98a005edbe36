@@ -1,0 +1,5 @@
+spring.application.name=AnnoBasedConfig
+
+Students.name=Rahul
+Students.age=30
+Students.religion=Sikh

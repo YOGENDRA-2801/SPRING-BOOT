@@ -1,0 +1,16 @@
+package in.yoy.standaloneprojectdemo.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication // provides setup and configurations for our spring boot application
+public class StandaloneProjectDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StandaloneProjectDemoApplication.class, args);
+		System.out.println("Namaste Duniya");
+	}
+
+}
+
+// @SpringBootApplication it is a combination of 3 annotation 

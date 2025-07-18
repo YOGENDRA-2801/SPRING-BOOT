@@ -1,0 +1,58 @@
+package in.yoy.annobasedconfig.beans;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Students {
+
+//	@Value - Spring annotation for property injection , ${} - Property placeholder syntax	
+//  person.name - Property key to lookup in application.properties , :Yogendra - Default value if property not found
+	@Value("${students.name:Yogendra}")
+	private String name ;
+	@Value("${students.age:22}")
+	private int age ;
+	@Value("${students.religion:Hindu}")
+	private String religion ;	
+	
+//	public Students(String name, int age, String religion) {
+//		super();
+//		this.name = name;
+//		this.age = age;
+//		this.religion = religion;
+//	}
+//	SPRING WILL THROW ERROR. Bcoz jab aap constructor injection use kar rahe ho (i.e., aapke Students class mein constructor hai), to Spring @Value se values inject nahi karega unless constructor bhi properly annotated ho.  
+	
+//	
+//	Option 1: Use Field Injection + @Value (Fix Syntax) => constructor hata do and sirf getter & setter rhne do
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getReligion() {
+		return religion;
+	}
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
+	
+//	@Value kewal static properties ke liye hai, dynamic data के लिए services/repositories/@PostConstruct use krte hai
+
+	public void display() {
+		System.out.println("Name : " + name);
+		System.out.println("Age : " + age);
+		System.out.println("Religion : " + religion);
+	}
+	
+}

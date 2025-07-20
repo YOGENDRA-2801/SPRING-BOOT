@@ -61,6 +61,5 @@ public class CrudOperationsApplication implements CommandLineRunner
 //		1. Initial data seeding
 //		2. Database connectivity check
 //		3. Application startup tasks
-//		4. Configuration validation
-	
+//		4. Configuration validation	
 }

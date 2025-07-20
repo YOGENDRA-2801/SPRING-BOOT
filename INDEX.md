@@ -2,15 +2,18 @@ INDEX
 
 
 
-* SB INTRO
-* SB BASIC
+* SB INTRO ✓
+* SB BASIC ✓
 * SB AOP
 
 
 
-* SB JDBC
-* SB HIBERNATE
-* SB JPA
+* SB JDBC ✓
+* SB HIBERNATE ✓
+* SB JPA ✓
+
+
+
 * SB DATA JPA
 
  	CORE CRUD
@@ -39,11 +42,11 @@ INDEX
 
 * SB WEB MVC
 
- 	MVC PROGRAM
+ 	ANNOTATIONS
+
+&nbsp;	MVC PROGRAM
 
  	THYMLEAF
-
- 	ANNOTATIONS
 
 
 
@@ -64,6 +67,3 @@ INDEX
 
 
 * SB LOGGING
-
-
-

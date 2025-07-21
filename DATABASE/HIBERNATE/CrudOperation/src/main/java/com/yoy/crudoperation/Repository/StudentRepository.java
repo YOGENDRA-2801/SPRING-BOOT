@@ -5,7 +5,7 @@ import com.yoy.crudoperation.Entity.Student;
 public interface StudentRepository 
 {
 	public void insertStudent(Student students) ;
-	public void deleteStudent(Student students) ;
+	public void deleteStudent(Long id) ;
 	public boolean updateStudent(Student students) ;
 	public boolean updateCourse(Long id , String newCourse) ;
 	public Student retrieveStudent(Long id) ; 

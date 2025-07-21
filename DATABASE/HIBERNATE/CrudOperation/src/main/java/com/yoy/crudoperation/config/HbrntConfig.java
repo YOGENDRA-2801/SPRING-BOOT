@@ -7,7 +7,6 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -54,12 +53,7 @@ public class HbrntConfig
 	HibernateTransactionManager transactionManager() {
 		HibernateTransactionManager htm = new HibernateTransactionManager();
 		htm.setSessionFactory(sessionFactory().getObject());
-		return htm ;	}
+		return htm ;	}	
 	
-//	5. CREATE A BEAN FOR HIBERNATE TEMPLATE
-	@Bean
-	HibernateTemplate hbTemp() {
-		HibernateTemplate ht = new HibernateTemplate() ;
-		ht.setSessionFactory(sessionFactory().getObject());
-		return ht ; 	}
+//	HibernateTemplate use krne par compatibility issue aa rhe the because newer version usko support nahi kr rhe
 }

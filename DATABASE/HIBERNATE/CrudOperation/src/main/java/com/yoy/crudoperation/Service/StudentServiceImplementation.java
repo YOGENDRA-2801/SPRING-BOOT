@@ -27,9 +27,9 @@ public class StudentServiceImplementation implements StudentService {
 	}
 
 	@Override
-	public void deleteStudSrvc(Student students) {
+	public void deleteStudSrvc(Long id) {
 		try {
-			studRepo.deleteStudent(students);
+			studRepo.deleteStudent(id);
 			System.out.println("Student deleted successfully");
 		} catch (Exception e) {
 			System.out.println("Required Operation Cannot be performed due to following reason");
@@ -64,8 +64,8 @@ public class StudentServiceImplementation implements StudentService {
 	@Override
 	public void retrieveStudSrvc(Long rollno) {
 		try {
-			studRepo.retrieveStudent(rollno) ;
-			System.out.println("Student added successfully");
+			Student stud = studRepo.retrieveStudent(rollno) ;
+			stud.display();
 		} catch (Exception e) {
 			System.out.println("Required Operation Cannot be performed due to following reason");
 			e.printStackTrace();

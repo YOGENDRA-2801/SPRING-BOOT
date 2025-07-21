@@ -2,7 +2,6 @@ package com.yoy.crudoperation;
 
 import java.math.BigDecimal;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +15,7 @@ public class CrudOperationApplication implements CommandLineRunner
 {
 	private final StudentService service ;
 	
-	@Autowired
+//	@Autowired
 	public CrudOperationApplication(StudentService service) {
 		super();
 		this.service = service;
@@ -34,9 +33,24 @@ public class CrudOperationApplication implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception 
 	{
-		service.insertStudSrvc(stud1());
-		service.insertStudSrvc(stud2());
-		service.insertStudSrvc(stud3());
+//		INSERT
+//		service.insertStudSrvc(stud1());
+//		service.insertStudSrvc(stud2());
+//		service.insertStudSrvc(stud3());
+		
+//		UPDATE
+//		service.updateStudSrvc(stud1());
+//		service.updateStudSrvc(stud3());
+//		service.updateCursSrvc(6L, "BSC-CS");
+		
+//		SELECT
+		service.retrieveStudSrvc(4L);
+		service.retrieveStudSrvc(5L);
+		
+//		ḌELETE
+//		service.deleteStudSrvc(1L);
+//		service.deleteStudSrvc(2L);
+//		service.deleteStudSrvc(3L);
 	}
 }
 

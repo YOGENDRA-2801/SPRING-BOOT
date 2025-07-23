@@ -34,9 +34,9 @@ public class CrudOperationApplication implements CommandLineRunner
 	public void run(String... args) throws Exception 
 	{
 //		INSERT
-//		service.insertStudSrvc(stud1());
-//		service.insertStudSrvc(stud2());
-//		service.insertStudSrvc(stud3());
+		service.insertStudSrvc(stud1());
+		service.insertStudSrvc(stud2());
+		service.insertStudSrvc(stud3());
 		
 //		UPDATE
 //		service.updateStudSrvc(stud1());
@@ -44,8 +44,8 @@ public class CrudOperationApplication implements CommandLineRunner
 //		service.updateCursSrvc(6L, "BSC-CS");
 		
 //		SELECT
-		service.retrieveStudSrvc(4L);
-		service.retrieveStudSrvc(5L);
+//		service.retrieveStudSrvc(4L);
+//		service.retrieveStudSrvc(5L);
 		
 //		ḌELETE
 //		service.deleteStudSrvc(1L);

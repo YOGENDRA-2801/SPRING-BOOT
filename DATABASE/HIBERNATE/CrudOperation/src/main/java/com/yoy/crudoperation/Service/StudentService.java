@@ -9,4 +9,6 @@ public interface StudentService
 	public void updateStudSrvc(Student students) ;
 	public void updateCursSrvc(Long id , String newCourse) ;
 	public void retrieveStudSrvc(Long rollno) ; 	
+	
+	
 }

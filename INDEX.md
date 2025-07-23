@@ -62,8 +62,12 @@ INDEX
 
 
 
+* LOGGING
+
+
+
+* SWAGGER
+
+
+
 * SB MICROSERVICES
-
-
-
-* SB LOGGING

@@ -53,7 +53,7 @@ public class StudentRepositoryImplementation implements StudentRepository
 
 	@Override
 	public Student retrieveStudent(Long id) {
-		Session session = sf.openSession();;
+		Session session = sf.openSession();
 		Student stud = session.get(Student.class, id) ;
 		return stud ;
 	}	

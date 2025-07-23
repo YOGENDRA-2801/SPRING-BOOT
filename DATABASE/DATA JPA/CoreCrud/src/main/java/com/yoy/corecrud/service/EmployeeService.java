@@ -1,15 +1,16 @@
 package com.yoy.corecrud.service;
 
+import java.math.BigDecimal;
+
 import com.yoy.corecrud.entity.Employee;
 
 public interface EmployeeService 
 {
 	public void addEmployee(Employee emp) ;
-	public void removeEmployee() ;
-	public void updateEmployee() ;
-	public void updateSalary() ;
+	public void removeEmployee(Long id) ;
+	public void updateSalary(Long id, BigDecimal kamai) ;
 	public void getAllEmployee() ;
-	public void getEmployeeById() ;
+	public void getEmployeeById(Long id) ;
 }
 
 /*

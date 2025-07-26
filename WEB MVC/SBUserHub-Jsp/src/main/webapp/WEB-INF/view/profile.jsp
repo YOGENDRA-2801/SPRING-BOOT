@@ -26,7 +26,7 @@
                 <p style="font-size: 16px; margin: 10px 0;"><strong>Email:</strong> ${user.getEmail()}</p>
                 <p style="font-size: 16px; margin: 10px 0;"><strong>Mobile:</strong> ${user.getMobile()}</p>
 
-                <form action="home" method="post" style="text-align: center; margin-top: 30px;">
+                <form action="/" method="post" style="text-align: center; margin-top: 30px;">
                     <input type="submit" value="Logout"
                         style="padding: 10px 25px; background-color: #ff4d4d; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px;">
                 </form>

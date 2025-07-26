@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.yoy.sbuserhubjsp.entity.User;
 import com.yoy.sbuserhubjsp.service.UserService;
@@ -19,7 +20,7 @@ public class UserController {
 		this.usrSrv = usrSrv;
 	}
 	
-	@GetMapping({"/", "/home"})
+	@RequestMapping("/")
 	public String home() {
 		return "index" ;
 	}

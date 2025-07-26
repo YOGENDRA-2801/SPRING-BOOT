@@ -5,13 +5,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(
+		    name = "user_gen", // ✅ Java code mein reference name
+//		    sequenceName = "user_seq", // Optional -- ✅ Database mein actual sequence object ka naam:
+		    initialValue = 101, // ✅ Starting value
+		    allocationSize = 1  // ✅ 1-1 increment के लिए add करो
+		)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_gen")
 	@Column(name = "id")
 	private long id ;
 	@Column(name = "name")

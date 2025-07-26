@@ -12,7 +12,10 @@
 
         <div
             style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
-            <h1 style="text-align: center; margin-bottom: 30px; color: #333;">REGISTRATION FORM</h1>
+            <c:if test="${not empty msg}">
+                <h2 style="color: crimson;">${msg}</h2>
+            </c:if> 
+            <h1 style="text-align: center; margin-bottom: 30px; color: #333;">Login FORM</h1>
             <form action="log-prof" method="post" style="display: flex; flex-direction: column; gap: 20px;">
 
                 User ID : <input type="number" name="id" placeholder="Enter your user id" required

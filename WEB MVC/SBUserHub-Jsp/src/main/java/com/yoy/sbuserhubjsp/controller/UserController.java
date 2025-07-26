@@ -18,6 +18,11 @@ public class UserController {
 		super();
 		this.usrSrv = usrSrv;
 	}
+	
+	@GetMapping({"/", "/home"})
+	public String home() {
+		return "index" ;
+	}
 
 	@GetMapping("/register")
 	public String register() {
@@ -33,12 +38,14 @@ public class UserController {
 	public String profile(@ModelAttribute User user, Model model) {
 		boolean status = usrSrv.addUser(user) ;
 		if (status) {
-			model.addAttribute("status", "Registration Done Successfully") ;
+			model.addAttribute("status", "Success") ;
+			return "profile" ;
 		}
 		else {
-			model.addAttribute("status", "Registration Failed") ;
-		}
-		return "profile" ;
+			model.addAttribute("status", "Failed") ;
+			model.addAttribute("msg", "Registration failed due to some error") ;
+			return "register" ;
+		}		
 	}
 	
 	@PostMapping("/log-prof")
@@ -47,12 +54,15 @@ public class UserController {
 		if ( validateUser != null 
 				&& validateUser.getPassword().equals(authUser.getPassword())) 
 		{
+			model.addAttribute("status", "Success") ;
 			model.addAttribute("user", validateUser) ;
+			return "profile" ;
 		}
 		else 
 		{
-			model.addAttribute("invalidUser", "Incorrect Username or Password") ;
-		}
-		return "profile" ;
+			model.addAttribute("status", "Failed") ;
+			model.addAttribute("msg", "Incorrect Username or Password") ;
+			return "login" ;
+		}		
 	}
 }

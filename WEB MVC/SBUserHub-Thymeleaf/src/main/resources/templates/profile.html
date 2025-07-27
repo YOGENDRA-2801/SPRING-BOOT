@@ -1,25 +1,87 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        p {
+            background-color: #ffffff;
+            padding: 10px 15px;
+            border-left: 4px solid #4CAF50;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        strong {
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #c0392b;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Welcome, <span th:text="${client.getName()}">Client-Name</span></h2>
+    <h2>
+        Welcome,
+        <!-- Thymeleaf: Display client name -->
+        <span th:text="${client.getName()}">Client-Name</span>
+    </h2>
 
     <h3>Your Profile Details</h3>
 
-    <p><strong>ID : </strong> <span th:text="${client.getId()}">Client-ID</span></p>
-    <p><strong>Name : </strong> <span th:text="${client.getName()}">Client-Name</span></p>
-    <p><strong>Email : </strong> <span th:text="${client.getEmail()}">Client-Email</span></p>
-    <p><strong>Mobile : </strong> <span th:text="${client.getMobile()}">Client-Phone-No</span></p>
+    <p>
+        <strong>ID : </strong>
+        <!-- Thymeleaf: Display client ID -->
+        <span th:text="${client.getId()}">Client-ID</span>
+    </p>
+
+    <p>
+        <strong>Name : </strong>
+        <!-- Thymeleaf: Display client name -->
+        <span th:text="${client.getName()}">Client-Name</span>
+    </p>
+
+    <p>
+        <strong>Email : </strong>
+        <!-- Thymeleaf: Display client email -->
+        <span th:text="${client.getEmail()}">Client-Email</span>
+    </p>
+
+    <p>
+        <strong>Mobile : </strong>
+        <!-- Thymeleaf: Display client mobile -->
+        <span th:text="${client.getMobile()}">Client-Phone-No</span>
+    </p>
 
     <a href="/index.html">Logout</a>
-
 </body>
 
 </html>

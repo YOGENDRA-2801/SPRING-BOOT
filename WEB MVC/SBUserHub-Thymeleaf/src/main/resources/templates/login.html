@@ -1,31 +1,95 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: red;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        div {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        input[type="number"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
-
     <div>
 
-        <!-- ERROR MESSAGE ON INCORRECT DETAILS -->
-        <h2 th:if="${msg != ''}"><span th:text="${msg}">Error Message</span></h2>
+        <!-- Thymeleaf: Show error message if msg is not empty -->
+        <h2 th:if="${msg != ''}">
+            <span th:text="${msg}">Error Message</span>
+        </h2>
 
         <h1>LOG IN PAGE</h1>
 
+        <!-- Thymeleaf: Form submission to /login-prof with client object -->
         <form th:action="@{login-prof}" th:object="${client}" method="post">
 
-            User-ID :
+            <label>User-ID:</label>
+            <!-- Thymeleaf: Bind user ID field -->
             <input type="number" th:field="*{id}" placeholder="Enter your User-ID" required />
-            <br />
 
-            Password :
+            <label>Password:</label>
+            <!-- Thymeleaf: Bind password field -->
             <input type="password" th:field="*{password}" placeholder="Enter password" required />
-            <br />
 
             <input type="submit" value="SIGN IN" />
         </form>

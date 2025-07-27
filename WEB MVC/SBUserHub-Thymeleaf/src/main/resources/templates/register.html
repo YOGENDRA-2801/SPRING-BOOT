@@ -1,39 +1,105 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: red;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
-
     <div>
 
-        <!-- ERROR MESSAGE ON INCORRECT DETAILS -->
-        <h2 th:if="${msg != ''}"><span th:text="${msg}">Error Message</span></h2>
+        <!-- Thymeleaf: Show error message if msg is not empty -->
+        <h2 th:if="${msg != ''}">
+            <span th:text="${msg}">Error Message</span>
+        </h2>
 
         <h1>REGISTRATION PAGE</h1>
 
+        <!-- Thymeleaf: Form submission to /regtr-prof with client object binding -->
         <form th:action="@{regtr-prof}" th:object="${client}" method="post">
 
-            Full Name :
+            <label>Full Name:</label>
+            <!-- Thymeleaf: Bind name field -->
             <input type="text" th:field="*{name}" placeholder="Enter your full name" required />
-            <br />
 
-            Email :
+            <label>Email:</label>
+            <!-- Thymeleaf: Bind email field -->
             <input type="email" th:field="*{email}" placeholder="Enter your email address" required />
-            <br />
 
-            Mobile :
+            <label>Mobile:</label>
+            <!-- Thymeleaf: Bind mobile field -->
             <input type="tel" th:field="*{mobile}" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required />
-            <br />
 
-            Password :
+            <label>Password:</label>
+            <!-- Thymeleaf: Bind password field -->
             <input type="password" th:field="*{password}" placeholder="Enter password" required />
-            <br />
 
             <input type="submit" value="SIGN UP" />
         </form>

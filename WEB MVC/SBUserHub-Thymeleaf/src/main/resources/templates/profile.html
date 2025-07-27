@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <h2>Welcome, <span th:text="${client.getName()}">Client-Name</span></h2>
+
+    <h3>Your Profile Details</h3>
+
+    <p><strong>ID : </strong> <span th:text="${client.getId()}">Client-ID</span></p>
+    <p><strong>Name : </strong> <span th:text="${client.getName()}">Client-Name</span></p>
+    <p><strong>Email : </strong> <span th:text="${client.getEmail()}">Client-Email</span></p>
+    <p><strong>Mobile : </strong> <span th:text="${client.getMobile()}">Client-Phone-No</span></p>
+
+    <a href="/index.html">Logout</a>
+
+</body>
+
+</html>

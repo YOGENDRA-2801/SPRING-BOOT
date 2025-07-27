@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <div>
+
+        <!-- ERROR MESSAGE ON INCORRECT DETAILS -->
+        <h2 th:if="${msg != ''}"><span th:text="${msg}">Error Message</span></h2>
+
+        <h1>LOG IN PAGE</h1>
+
+        <form th:action="@{login-prof}" th:object="${client}" method="post">
+
+            User-ID :
+            <input type="number" th:field="*{id}" placeholder="Enter your User-ID" required />
+            <br />
+
+            Password :
+            <input type="password" th:field="*{password}" placeholder="Enter password" required />
+            <br />
+
+            <input type="submit" value="SIGN IN" />
+        </form>
+    </div>
+</body>
+
+</html>

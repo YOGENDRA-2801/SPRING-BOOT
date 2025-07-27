@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us - Number Comparison</title>
 </head>
-<body>
-    <h2>CONDITIONAL STATEMENT USING THYMELEAF [IF]</h2>
-    <p style="font-size: large;" th:if="${num1>num2}">
-        <span th:text="${num1} + ' is greater than ' + ${num2}">Number-Comparisons-Answer</span>
-    </p>
-    <p style="font-size: large;" th:if="${num1<num2}">
-        <span th:text="${num2} + ' is greater than ' + ${num1}">Number-Comparisons-Answer</span>
-    </p>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9fbfd; color: #333; padding: 40px;">
+
+    <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        
+        <!-- Topic Title -->
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 25px;">
+            🔍 Conditional Statement Using Thymeleaf [IF]
+        </h2>
+
+        <!-- num1 > num2 -->
+        <p style="font-size: 18px; color: #27ae60; text-align: center;" th:if="${num1 > num2}">
+             <!-- This block is rendered only if num1 is greater than num2 -->
+            <span th:text="${num1} + ' is greater than ' + ${num2}">Number-Comparisons-Answer</span>
+            <!-- Dynamically generates and displays the comparison result -->
+            <!-- Fallback text appears if Thymeleaf isn't processed -->
+        </p>
+
+        <!-- num1 < num2 -->
+        <p style="font-size: 18px; color: #e67e22; text-align: center;" th:if="${num1 < num2}">
+             <!-- This block is rendered only if num1 is less than num2 -->
+            <span th:text="${num2} + ' is greater than ' + ${num1}">Number-Comparisons-Answer</span>
+        </p>
+
+        <!-- num1 == num2 -->
+        <p style="font-size: 18px; color: #2980b9; text-align: center;" th:if="${num1 == num2}">
+             <!-- This block is rendered only if num1 is equal to num2 -->
+            <span th:text="'Both numbers are equal: ' + ${num1}">Number-Comparisons-Answer</span>
+        </p>
+    </div>
+
 </body>
 </html>

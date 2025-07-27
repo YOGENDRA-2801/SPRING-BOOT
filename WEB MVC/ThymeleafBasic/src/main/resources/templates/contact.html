@@ -1,16 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- HTML5 document declaration -->
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- Setting language to English and enabling Thymeleaf syntax using the xmlns -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
+    <title>Profile Page</title> <!-- Title that appears in browser tab -->
 </head>
-<body>
-    <h2>LOOPING STATEMENT USING THYMELEAF [FOR-EACH]</h2>
-    <ol>
-        <li th:each="number : ${contacts}">
-            <span th:text="${number}">Contact-Numbers</span> 
+
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px;">
+
+    <!-- Topic Title -->
+    <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">
+        📋 Contact List - Using Thymeleaf Loop
+    </h2>
+
+    <ol style="max-width: 500px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        
+        <li th:each="number : ${contacts}" style="margin: 10px 0; padding: 10px; background-color: #ecf0f1; border-radius: 5px; list-style: decimal inside;">
+        <!-- Thymeleaf for-each loop: Iterates over each element in 'contacts' list -->
+        <!-- 'number' is the variable holding the current item during each iteration -->   
+
+            <span th:text="${number}" style="font-weight: bold; color: #34495e;">📞 Contact Number</span>
+            <!-- Dynamically displays the value of 'number' from the loop -->
+            <!-- Fallback text '📞 Contact Number' shown if Thymeleaf isn't processed -->
+        
         </li>
     </ol>
+
 </body>
 </html>

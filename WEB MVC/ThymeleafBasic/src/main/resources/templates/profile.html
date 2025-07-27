@@ -1,12 +1,36 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- HTML5 document declaration -->
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- Setting language to English and enabling Thymeleaf syntax using the xmlns -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
+    <title>Profile Page</title> <!-- Title that appears in browser tab -->
 </head>
-<body>
-    <h1>Welcome <span th:text="${name}">User-Ka-Naam</span></h1>
-    <h2 th:text="${greet}">Greeting-Wala-Message</h2>
+
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px;">
+
+    <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+
+        <!-- Topic Title -->
+        <h1 style="font-size: 26px; color: #1abc9c; margin-bottom: 30px;">
+            📘 Data Binding using Thymeleaf
+        </h1>
+
+        <h2 style="font-size: 32px; color: #2c3e50;">
+            Welcome, <span th:text="${name}">User-Ka-Naam</span> 👋 
+        </h2>
+        <!-- Dynamic binding using Thymeleaf to insert 'name' from backend -->
+        <!-- 'User-Ka-Naam' is fallback/static content visible if Thymeleaf is not rendered -->
+
+        <h3 style="font-size: 20px; color: #7f8c8d; margin-top: 15px;" th:text="${greet}">
+            Greeting-Wala-Message
+        </h3>
+        <!-- Dynamic binding to insert greeting message from backend -->
+        <!-- Again, fallback text in case Thymeleaf is not processed -->
+
+    </div>
+
 </body>
 </html>

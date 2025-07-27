@@ -1,43 +1,104 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <!DOCTYPE html>
-    <html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Insert title here</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0f2f5, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    <body
-        style="margin:0; padding:0; font-family: Arial, sans-serif; background: linear-gradient(to right, #f0f2f5, #ffffff); display: flex; justify-content: center; align-items: center; height: 100vh;">
+        body > div {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
 
-        <div
-            style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
-            <c:if test="${not empty msg}">
-                <h2 style="color: crimson;">${msg}</h2>
-            </c:if>            
-            <h1 style="text-align: center; margin-bottom: 30px; color: #333;">REGISTRATION FORM</h1>
-            <form action="reg-prof" method="post" style="display: flex; flex-direction: column; gap: 20px;">
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
 
-                Full Name : <input type="text" name="name" placeholder="Enter your full name" required
-                    style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-                <br />
+        h2 {
+            color: crimson;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-                Email : <input type="email" name="email" placeholder="Enter your email address" required
-                    style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-                <br />
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-                Mobile : <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number"
-                    required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-                <br />
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-                Password : <input type="password" name="password" placeholder="Enter password" required
-                    style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-                <br />
+        input[type="submit"] {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-                <input type="submit" value="SIGN UP"
-                    style="padding: 12px; background-color: #4CAF50; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;" />
-            </form>
-        </div>
-    </body>
+        input[type="submit"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
 
-    </html>
+<body>
+
+    <div>
+        <%-- JSP: Show error message if 'msg' is not empty --%>
+        <c:if test="${not empty msg}">
+            <h2>${msg}</h2>
+        </c:if>
+
+        <h1>REGISTRATION FORM</h1>
+
+        <form action="reg-prof" method="post">
+            Full Name:
+            <input type="text" name="name" placeholder="Enter your full name" required />
+
+            Email:
+            <input type="email" name="email" placeholder="Enter your email address" required />
+
+            Mobile:
+            <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required />
+
+            Password:
+            <input type="password" name="password" placeholder="Enter password" required />
+
+            <input type="submit" value="SIGN UP" />
+        </form>
+    </div>
+
+</body>
+
+</html>

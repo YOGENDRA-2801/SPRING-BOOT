@@ -18,13 +18,12 @@ public class UserSrvImpl implements UserService
 
 	@Transactional
 	@Override
-	public boolean addUser(User user) {
+	public User addUser(User user) {
 		try {
-			userRepo.save(user) ;
-			return true ;
+			return userRepo.save(user) ;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}
 	}
 

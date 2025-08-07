@@ -10,13 +10,18 @@ INDEX
 
 * SB JDBC ✓
 * SB HIBERNATE ✓
-* SB JPA ✓
 
 
 
 * SB DATA JPA
 
- 	CORE CRUD
+ 	CORE CRUD ✓
+
+ 	TRASACTION ✓
+
+ 	DAO ✓ 
+
+
 
  	QUERY METHOD
 
@@ -26,11 +31,7 @@ INDEX
 
  	CRITERIA API
 
- 	VALIDATION
-
- 	DAO
-
- 	TRASACTION
+ 	VALIDATION 
 
  	BATCH
 
@@ -42,11 +43,15 @@ INDEX
 
 * SB WEB MVC
 
- 	ANNOTATIONS
+ 	ANNOTATIONS ✓
 
-&nbsp;	MVC PROGRAM
+ 	MVC PROGRAM ✓
 
- 	THYMLEAF
+ 	THYMLEAF ✓
+
+ 
+
+ 	CORS \& @CrossOrigin
 
 
 
@@ -54,7 +59,7 @@ INDEX
 
 
 
-* SB REST API
+* SB REST API ✓
 
 
 
@@ -66,7 +71,7 @@ INDEX
 
 
 
-* SWAGGER
+* SWAGGER / POSTMAN
 
 
 

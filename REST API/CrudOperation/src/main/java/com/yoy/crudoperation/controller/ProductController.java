@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.yoy.crudoperation.entity.Products;
 import com.yoy.crudoperation.service.ProductService;
 
-@RestController  // Combination of @Controller and @ResponseBody
+@RestController
 public class ProductController {
 	
 	private final ProductService service ;
@@ -27,21 +27,16 @@ public class ProductController {
 		this.service = service;
 	}
 
-	@PostMapping("/insert")
-//	@ResponseBody -- isko tab use krte hai jab hum view page ka name return nahi kr rhe json type ka data hai ya koi aur data return kr rhe -- Can be used at class level or method level 
+	@PostMapping("/insert") 
 	public Products addProducts(@RequestBody Products saaman) {
 		return service.insertProduct(saaman) ;
 	}
 	
-//	@RequestBody -- used to bind http request body (usually json or xml format) directly to method parameter, converting it into java object
-
 	@GetMapping("/getallproduct")
 	public List<Products> getAllProducts() {
 		return service.getAllPro();
 	}
-	
-//	@PathVariable -- Used to extract values from URI template in request URL, allowing dynamic data retrieval from URL 
-	
+		
 	@GetMapping("/getproductbyid/{id}")
 	public ResponseEntity<Products> getProducts(@PathVariable Long id) {
 		Products product = service.findProById(id) ;
@@ -53,16 +48,12 @@ public class ProductController {
 			return ResponseEntity.notFound().header("Message", "Product not found with id: " + id).build();
 		}		
 	}
-	
-//	ResponseEntity -- represents entire http response including header , body & status code. Allows greater control over response
-	
+		
 	@PutMapping("/updatePrice/{id}/price")
 	public Products updatePrice(@PathVariable Long id , @RequestParam BigDecimal price) {
 		return service.updateProduct(id, price) ;
 	}
-	
-//	@RequestParam -- URL = .../price?price=11111.22
-	
+		
 	@DeleteMapping("/deleteproduct/{id}")
 	public ResponseEntity<String> removeProduct(@PathVariable Long id) {
 		boolean status = service.removeProduct(id) ;

@@ -58,10 +58,6 @@ public class ProSrvcImpl implements ProductService
 			Products oldPro = proRepo.findById(id).get() ;
 			oldPro.setPrice(price);
 			return oldPro ;
-//			return proRepo.save(oldPro) ; -- 
-//				1. Due to @Transactional oldPro object JPA ke persistence context me attached hai 
-//				2. Hence when managed object me koi change karte ho (setPrice()), to JPA us change ko transaction commit hote hi automatically flush kar deta hai database me.
-//				3. Is case me explicitly save() call karna optional hota hai.
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

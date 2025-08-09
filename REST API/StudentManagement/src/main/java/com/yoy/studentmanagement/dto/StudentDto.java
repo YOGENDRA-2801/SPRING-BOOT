@@ -9,6 +9,11 @@ public class StudentDto {
 	public StudentDto() {
 		super();
 	}
+	public StudentDto(String name, String email) {
+		super();
+		this.name = name;
+		this.email = email;
+	}
 	public StudentDto(Long id, String name, String email) {
 		super();
 		this.id = id;

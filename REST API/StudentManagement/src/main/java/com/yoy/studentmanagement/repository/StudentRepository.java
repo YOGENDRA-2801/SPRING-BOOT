@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.yoy.studentmanagement.entity.Student;
 
 @Repository
-public class StudentRepository extends JpaRepository<Student, Long>
+public interface StudentRepository extends JpaRepository<Student, Long>
 {
 
 }

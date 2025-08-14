@@ -11,7 +11,8 @@ import com.yoy.hms.entity.Patient;
 import com.yoy.hms.repository.PatientRepository;
 
 @SpringBootApplication
-public class HmsApplication implements CommandLineRunner
+public class HmsApplication 
+//	implements CommandLineRunner
 {
 	@Autowired
 	private PatientRepository repository ;
@@ -20,11 +21,11 @@ public class HmsApplication implements CommandLineRunner
 		SpringApplication.run(HmsApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception 
-	{
+//	@Override
+//	public void run(String... args) throws Exception 
+//	{
 //		List<Patient> patients = repository.findAll() ;
 //		System.out.println(patients);
-	}
+//	}
 
 }

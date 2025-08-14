@@ -5,8 +5,12 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.yoy.hms.type.BloodGroup;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -44,9 +48,12 @@ public class Patient
 	@Column(updatable = false)
 	private LocalDateTime createdAt ;
 	
+	@Enumerated(EnumType.STRING)
+	private BloodGroup bloodGroup ;
+	
 	@Override
 	public String toString() {
 		return "Patient [id=" + id + ", name=" + name + ", birthDate=" + birthDate + ", email=" + email + ", gender="
-				+ gender + ", createdAt=" + createdAt + "]";
+				+ gender + ", createdAt=" + createdAt + ", bloodGroup=" + bloodGroup + "]";
 	}
 }

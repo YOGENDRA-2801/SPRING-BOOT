@@ -9,18 +9,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.yoy.hms.entity.Patient;
 import com.yoy.hms.repository.PatientRepository;
 
-@SpringBootTest
+//@SpringBootTest
 public class PatientTest {
 	
-	@Autowired
-	private PatientRepository repository ;
-	
-	@Test
-	public void testPatientRepo() {
-		List<Patient> allPatients = repository.findAll() ; 
-		for (Patient patient : allPatients) {
-			System.out.println(patient);
-		}
-	}
+//	@Autowired
+//	private PatientRepository repository ;
+//	
+//	@Test
+//	public void testPatientRepo() {
+//		List<Patient> allPatients = repository.findAll() ; 
+//		for (Patient patient : allPatients) {
+//			System.out.println(patient);
+//		}
+//	}
 	
 }

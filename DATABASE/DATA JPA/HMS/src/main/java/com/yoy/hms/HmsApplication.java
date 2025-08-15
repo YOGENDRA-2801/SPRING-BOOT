@@ -1,18 +1,24 @@
 package com.yoy.hms;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
+import com.yoy.hms.dto.BGCount;
 import com.yoy.hms.entity.Patient;
 import com.yoy.hms.repository.PatientRepository;
+import com.yoy.hms.type.BloodGroup;
 
 @SpringBootApplication
 public class HmsApplication 
-//	implements CommandLineRunner
+	implements CommandLineRunner
 {
 	@Autowired
 	private PatientRepository repository ;
@@ -21,11 +27,69 @@ public class HmsApplication
 		SpringApplication.run(HmsApplication.class, args);
 	}
 
-//	@Override
-//	public void run(String... args) throws Exception 
-//	{
-//		List<Patient> patients = repository.findAll() ;
-//		System.out.println(patients);
-//	}
+	@Override
+	public void run(String... args) throws Exception 
+	{
+//		----- JPQ QUERY METHOD ----- 
+//		Patient p1 = repository.findByBirthDate(LocalDate.of(1995, 05, 12)) ;
+//		System.out.println(p1);
+//		List<Patient> p2 = repository.findByBirthDateOrEmail(LocalDate.of(1995, 05, 12), "sneha.joshi@example.com") ;
+//		for (Patient patient : p2) {
+//			System.out.println(patient);
+//		}
+//		List<Patient> p3 = repository.findByGenderContainingOrderByIdDesc("F") ;
+//		for (Patient patient : p3) {
+//		System.out.println(patient);
+//		}
+		
+//		----- JPQL ----- 
+//		List<Patient> p4 = repository.findByBloodGroup(BloodGroup.AB_POSITIVE) ;
+//		for (Patient patient : p4) {
+//			System.out.println(patient);
+//		}
+//		List<Patient> p4 = repository.bornAfterDate(LocalDate.of(1995, 01, 01)) ;
+//		for (Patient patient : p4) {
+//			System.out.println(patient);
+//		}
+//		List<Object[]> p5 = repository.countOfBloodType() ;
+//		for (Object[] objects : p5) {
+//			System.out.println(objects[0] + " -- " + objects[1]);
+//		}
+//		int p7 = repository.updateName("Batman", 1L) ;
+//		System.out.println(p7);
+//		List<BGCount> p8 = repository.countOfBloodType() ;
+//		for (BGCount bg : p8) {
+//			System.out.println(bg);
+//		}
+		
+//		----- NATIVE ----- 
+//		List<Patient> p6 = repository.findAllMareez() ;
+//		for (Patient patient : p6) {
+//			System.out.println(patient);
+//		}
+		Page<Patient> p9 = repository.findAllMareez(PageRequest.of(0, 5, Sort.by("naam"))) ;
+		for (Patient patient : p9) {
+			System.out.println(patient);
+		}
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

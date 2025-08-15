@@ -14,3 +14,11 @@
 11. spring.sql.init.schema-locations ka kaam hota hai schema 'create' karne wale scripts ka location dena (table creation DDL).
 12. spring.sql.init.data-locations ka kaam hota hai data insert/update (DML) wale SQL scripts ka location dena (table me initial/sample data dalne wale DML cmds).
 13. @Enumerated annotation enum values ko database mein kaise store karna hai ye define karta hai. EnumType.STRING -- Preferrred + DB me same enum values store krta in form of string. EnumType.ORDINAL -- Default + DB me integral value (1,2,3,...) store krta h not the same enum value
+
+
+1. To create a object of LocalDate use LocalDate.of(year, month, date) [ inside method argument if meth param ko local date ka obj chahiye ]
+2. SQL & JPQL ke COMMANDS case insensitive hote hai
+
+
+
+

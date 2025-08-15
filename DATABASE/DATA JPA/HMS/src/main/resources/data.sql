@@ -2,9 +2,9 @@ INSERT IGNORE INTO
 patients 
 	(naam, birth_date, email, gender, blood_group) 
 VALUES
-	('Rahul Sharma', '1995-05-12', 'rahul.sharma@example.com', 'Male', 'A_POSITIVE'),
-	('Priya Verma', '1998-09-23', 'priya.verma@example.com', 'Female', 'B_NEGATIVE'),
-	('Amit Kumar', '1990-12-01', 'amit.kumar@example.com', 'Male', 'O_POSITIVE'),
-	('Sneha Joshi', '1993-03-18', 'sneha.joshi@example.com', 'Female', 'AB_POSITIVE'),
-	('Vikas Mehra', '1988-07-30', 'vikas.mehra@example.com', 'Male', 'O_NEGATIVE')
+	('Anjali Kapoor', '1997-11-14', 'anjali.kapoor@example.com', 'Female', 'B_POSITIVE'),
+	('Rohan Desai', '1992-04-27', 'rohan.desai@example.com', 'Male', 'A_NEGATIVE'),
+	('Neha Singh', '1995-08-09', 'neha.singh@example.com', 'Female', 'O_POSITIVE'),
+	('Arjun Nair', '1989-01-05', 'arjun.nair@example.com', 'Male', 'AB_NEGATIVE'),
+	('Pooja Malhotra', '1994-06-22', 'pooja.malhotra@example.com', 'Female', 'B_NEGATIVE')
 ;

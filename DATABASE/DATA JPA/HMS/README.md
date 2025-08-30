@@ -18,6 +18,18 @@
 
 1. To create a object of LocalDate use LocalDate.of(year, month, date) [ inside method argument if meth param ko local date ka obj chahiye ]
 2. SQL & JPQL ke COMMANDS case insensitive hote hai
+3. Why Bi-Directional Mapping is required => 
+4. Join / Mapping variable k case me jpa generated column name as varname_PKofOther
+5. One-to-One mapping में by default unique = true होता है! But bakio me default value for unique is false
+6. Developers often skip reference variables in toString() to avoid recursion problems / circular dependency problem and keep the output clear and manageable.
+
+1. JPA Buddy extension (free tier) -- provides UI button to creates repository interface for entity 
+2. Builder Pattern , @Builder from lombok
+3. @RequiredArgsConstructor -- yah use kiya to properties ko final rkhna padega ? 
+4. Persistent context obj and non-persistent context object ka operation sath m nahi ho skta ?
+5. Cascade -- Parent per ager koi operation ho rha hai to child p "kon konse operation hone chahiye" ya "propogate" ya "kon konse changes ho allow h". Isse child bhi persistent context m chala jata if parent tx m hoga to. Many-to-One side me cascade generally nahi daalte & daal rha to dhyan dena
+6. JPA Domain -- Owning & Inverse side , Data Domain -- Parent & Child side -- Side that can exist independently without other is parent side
+7. fetch type -- eager and lazy , lazy -- patient get kr rhe hoto appointment ya Insurance nhi milnge unless explicitly unko get kwaya jaye , eager -- patient get karoge to appointment and insurance bhi sath me aa jayega 
 
 
 

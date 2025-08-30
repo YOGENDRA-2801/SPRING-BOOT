@@ -12,16 +12,21 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import com.yoy.hms.dto.BGCount;
+import com.yoy.hms.entity.Insurance;
 import com.yoy.hms.entity.Patient;
+import com.yoy.hms.repository.InsuranceRepository;
 import com.yoy.hms.repository.PatientRepository;
+import com.yoy.hms.service.InsuranceService;
 import com.yoy.hms.type.BloodGroup;
 
 @SpringBootApplication
 public class HmsApplication 
 	implements CommandLineRunner
 {
+//	@Autowired
+//	private PatientRepository repository ;
 	@Autowired
-	private PatientRepository repository ;
+	private InsuranceService insuranceService ;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(HmsApplication.class, args);
@@ -30,6 +35,13 @@ public class HmsApplication
 	@Override
 	public void run(String... args) throws Exception 
 	{
+		Insurance insurance = new Insurance("HdfcMaxLife", "HDFC", LocalDate.of(2030, 12, 31), null) ;
+		Patient patient = insuranceService.assignInsuranceToPatient(insurance, 1L);
+		patient.toString() ;
+		System.out.println(patient.getInsurance());
+	}	
+	
+	public void methodJpqlNative() {
 //		----- JPQ QUERY METHOD ----- 
 //		Patient p1 = repository.findByBirthDate(LocalDate.of(1995, 05, 12)) ;
 //		System.out.println(p1);
@@ -41,6 +53,7 @@ public class HmsApplication
 //		for (Patient patient : p3) {
 //		System.out.println(patient);
 //		}
+//		
 		
 //		----- JPQL ----- 
 //		List<Patient> p4 = repository.findByBloodGroup(BloodGroup.AB_POSITIVE) ;
@@ -67,29 +80,11 @@ public class HmsApplication
 //		for (Patient patient : p6) {
 //			System.out.println(patient);
 //		}
-		Page<Patient> p9 = repository.findAllMareez(PageRequest.of(0, 5, Sort.by("naam"))) ;
-		for (Patient patient : p9) {
-			System.out.println(patient);
-		}
-		
+//		Page<Patient> p9 = repository.findAllMareez(PageRequest.of(0, 5, Sort.by("naam"))) ;
+//		for (Patient patient : p9) {
+//			System.out.println(patient);
+//		}	
 	}
-
+	
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -15,3 +15,10 @@
 		3. Pageable = Page number + Page size + Sorting info
 		4. PageRequest = Pageable ka implementation jo batata hai kaun sa page aur kitne records chahiye
 		5 Page<T> = Paged results ka wrapper jo data + meta info (total pages, total elements) deta hai	
+
+
+1. Foreign key wala column == Join Column as yah 2 classes/table ko join krta h. Use @JoinColumn instead of @Column in case of mapping. In case of entity you should always define mapping when doing foreign-key-case
+2. Two source of truth stating the same statement => creates ambiguity , yah scene bi-directional mapping k case m ho skta h hence to resolve this there is concept of 'owning side (foreign key ko own krne wala)' and 'inverse side (mappedBy attribute wala)'
+3. Owning Side => will have FK but not mappedBy attribute. Many-to-Many -- FK resides in separate table (jaha many-to-many + joincolumn wahi owning side). Many-to-One & One-to-Many -- FK is in many side table. One-to-One -- Dependent side is owing side (80-90% case, look for dependency>performance>db-design>busns-logic)
+4. Inverse side se koi bhi change karega to association wale column per kuch bhi affect nahi krga as association column belongs to owing side. Hence changes ko action me lane k liye unko owning me dalo than inverse m bhi daal do just to maintain bidirectional consistency
+5. HashSet ko create kiya new keyword se in entity class taki hibernate ko null value store na krna pade reference variable me 

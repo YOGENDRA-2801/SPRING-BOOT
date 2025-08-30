@@ -16,8 +16,6 @@ import com.yoy.hms.dto.BGCount;
 import com.yoy.hms.entity.Patient;
 import com.yoy.hms.type.BloodGroup ;
 
-
-
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long>
 {

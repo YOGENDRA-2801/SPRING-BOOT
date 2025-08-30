@@ -1,6 +1,7 @@
 package com.yoy.hms;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import com.yoy.hms.dto.BGCount;
+import com.yoy.hms.entity.Appointment;
 import com.yoy.hms.entity.Insurance;
 import com.yoy.hms.entity.Patient;
 import com.yoy.hms.repository.InsuranceRepository;
@@ -35,10 +37,19 @@ public class HmsApplication
 	@Override
 	public void run(String... args) throws Exception 
 	{
-		Insurance insurance = new Insurance("HdfcMaxLife", "HDFC", LocalDate.of(2030, 12, 31), null) ;
-		Patient patient = insuranceService.assignInsuranceToPatient(insurance, 1L);
-		patient.toString() ;
-		System.out.println(patient.getInsurance());
+//		System.out.println(" ----- FUNCTION FOR INSURANCE OPERATION STARTED ----- ");
+//		Insurance insurance = new Insurance("HdfcMaxLife", "HDFC", LocalDate.of(2030, 12, 31), null) ;
+//		Patient patient = insuranceService.assignInsuranceToPatient(insurance, 1L);
+//		System.out.println(patient.toString()); ;
+//		System.out.println(patient.getInsurance());
+//		System.out.println(" ----- FUNCTION FOR INSURANCE OPERATION ENDED ----- ");
+		
+		System.out.println(" ----- FUNCTION FOR APPOINTMENT OPERATION STARTED ----- ");
+		Appointment appointment = new Appointment(LocalDateTime.of(2025, 11, 1, 14, 0, 0), "ADHD") ;
+		System.out.println(appointment);
+		System.out.println(appointment.getPatient());
+		System.out.println(appointment.getDoctor());
+		System.out.println(" ----- FUNCTION FOR APPOINTMENT OPERATION ENDED ----- ");
 	}	
 	
 	public void methodJpqlNative() {

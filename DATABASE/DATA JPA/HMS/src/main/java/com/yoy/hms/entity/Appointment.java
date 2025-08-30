@@ -34,6 +34,11 @@ public class Appointment {
 	public Appointment() {
 		super();
 	}
+	public Appointment(LocalDateTime appointmentTime, String reason) {
+		super();
+		this.appointmentTime = appointmentTime;
+		this.reason = reason;
+	}
 	public Appointment(LocalDateTime appointmentTime, String reason, Patient patient, Doctor doctor) {
 		super();
 		this.appointmentTime = appointmentTime;
@@ -73,6 +78,12 @@ public class Appointment {
 	}
 	public void setPatient(Patient patient) {
 		this.patient = patient;
+	}
+	public Doctor getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
 	}
 	
 	@Override

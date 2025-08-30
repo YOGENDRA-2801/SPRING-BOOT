@@ -8,3 +8,11 @@ VALUES
 	('Arjun Nair', '1989-01-05', 'arjun.nair@example.com', 'Male', 'AB_NEGATIVE'),
 	('Pooja Malhotra', '1994-06-22', 'pooja.malhotra@example.com', 'Female', 'B_NEGATIVE')
 ;
+
+INSERT IGNORE INTO 
+doctor 
+	(name, specialization, email)
+VALUES
+    ('Dr. Rakesh Mehta', 'Cardiology', 'rakesh.mehta@example.com'),
+    ('Dr. Sneha Kapoor', 'Dermatology', 'sneha.kapoor@example.com'),
+    ('Dr. Arjun Nair', 'Orthopedics', 'arjun.nair@example.com');
